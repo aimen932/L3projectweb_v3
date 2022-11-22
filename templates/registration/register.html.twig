@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <style>
+        h1{
+            color:whitesmoke;
+            text-align: center;
+            font-size: 30px;
+            line-height: 1;
+            background-color: grey;
+            border: 6px solid black;
+            text-shadow: 2px 2px 1px black;
+        }
+        .btn{
+            background-color: red;
+            border: 5px solid black;
+            color: white;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: center;
+            font-size: 16px;
+            justify-content: end;
+        }
+    </style>
+    <h1>Inscription</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, 
+        {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.miage, { label: 'miage?'})}}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}
